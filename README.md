@@ -8,3 +8,5 @@
   - https://github.com/devsuperior/bds03
 - BDS04
   - https://github.com/devsuperior/bds04
+- BDS05
+  - https://github.com/devsuperior/bds05
