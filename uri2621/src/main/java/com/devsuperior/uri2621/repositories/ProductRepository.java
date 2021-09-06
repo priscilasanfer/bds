@@ -16,13 +16,13 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "FROM products p " +
             "INNER JOIN providers pr " +
             "ON p.id_providers = pr.id " +
-            "WHERE pr.name LIKE :name% " +
+            "WHERE pr.name LIKE CONCAT(:name, '%') " +
             "AND p.amount BETWEEN :min AND :max")
     List<ProductMinProjection> search1(Integer min, Integer max, String name);
 
     @Query("SELECT new com.devsuperior.uri2621.dto.ProductMinDTO(p.name) " +
             "FROM Product p " +
-            "WHERE p.provider.name LIKE :name% " +
+            "WHERE p.provider.name LIKE CONCAT(:name, '%')" +
             "AND p.amount BETWEEN :min AND :max")
     List<ProductMinDTO> search2(Integer min, Integer max, String name);
 
