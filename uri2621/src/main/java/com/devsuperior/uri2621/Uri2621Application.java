@@ -24,8 +24,8 @@ public class Uri2621Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Long min = 10L;
-		Long max = 20L;
+		Integer min = 10;
+		Integer max = 20;
 		String name = "P";
 
 		List<ProductMinProjection> list1 = repository.search1(min, max, name);
@@ -36,6 +36,10 @@ public class Uri2621Application implements CommandLineRunner {
 		result1.forEach(System.out::println);
 		System.out.println("\n\n");
 
+		List<ProductMinDTO> result2 = repository.search2(min, max, name);
 
+		System.out.println("\n****  Resultado JPQL  **** ");
+		result2.forEach(System.out::println);
+		System.out.println("\n\n");
 	}
 }
