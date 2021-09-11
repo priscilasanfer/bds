@@ -19,6 +19,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private Environment environment;
 
     private static final String[] PUBLIC = {"/oauth/token", "/h2-console/**"};
+    private static final String[] MEMBER = {"/reviews"};
 
     @Autowired
     private JwtTokenStore tokenStore;
